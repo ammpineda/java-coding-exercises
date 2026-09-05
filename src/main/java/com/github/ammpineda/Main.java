@@ -10,7 +10,7 @@ public class Main {
         System.out.println(e1.solution(new int[]{}));
 
         Riddle e2 = new Riddle();
-        System.out.println(e2.solution("m?n?"));
+        System.out.println(e2.solution("a?b?"));
 
     }
 }

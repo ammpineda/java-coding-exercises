@@ -21,13 +21,13 @@ public class Riddle {
         for(int i = 0; i < word.length; i++){
             if('?' == word[i]){
                 // 1. Replace question mark right away.
-                ri = r.nextInt(Math.max(0, letters.length - 1));
+                ri = r.nextInt(Math.max(0, letters.length));
                 word[i] = letters[ri];
 
                 // 2. Check if it's the first index, then checks the right adjacent only.
                 if(i == 0){
                     while(word[i] == word[i+1]){
-                        ri = r.nextInt(Math.max(0, letters.length - 1));
+                        ri = r.nextInt(Math.max(0, letters.length));
                         word[i] = letters[ri];
                     }
                     continue;
@@ -36,7 +36,7 @@ public class Riddle {
                 // 3. Check if it's in the last index, then checks the left adjacent only.
                 if(i == (word.length - 1)){
                     while(word[i] == word[i-1]){
-                        ri = r.nextInt(Math.max(0, letters.length - 1));
+                        ri = r.nextInt(Math.max(0, letters.length));
                         word[i] = letters[ri];
                     }
                     continue;
@@ -44,7 +44,7 @@ public class Riddle {
 
                 // 4. Checks if adjacent characters are the same as [i] character
                 while((word[i] == word[i-1]) || (word[i] == word[i+1])){
-                    ri = r.nextInt(Math.max(0, letters.length - 1));
+                    ri = r.nextInt(Math.max(0, letters.length));
                     word[i] = letters[ri];
                 }
             }
