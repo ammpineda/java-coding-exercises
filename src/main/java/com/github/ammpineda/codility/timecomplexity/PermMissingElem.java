@@ -1,4 +1,4 @@
-package com.github.ammpineda.codility;
+package com.github.ammpineda.codility.timecomplexity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +23,11 @@ import java.util.List;
 public class PermMissingElem {
 
     public int solution(int[] input) {
-        if(input.length == 0){
-            return 1;
-        }
+        if(input.length == 0) return 1;
 
         List<Integer> sequence = new ArrayList<>();
-        for(int n : input){
-            sequence.add(n);
-        }
+        for(int n : input) sequence.add(n);
+
         sequence = sequence.stream().sorted().toList();
 
         for(int i = 1; i <= sequence.size(); i++){
@@ -40,5 +37,11 @@ public class PermMissingElem {
         }
 
         return sequence.size() + 1; // default
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(new PermMissingElem().solution(new int[]{1, 2, 3}));
+
     }
 }
