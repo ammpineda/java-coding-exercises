@@ -25,23 +25,29 @@ public class PermMissingElem {
     public int solution(int[] input) {
         if(input.length == 0) return 1;
 
-        List<Integer> sequence = new ArrayList<>();
-        for(int n : input) sequence.add(n);
+        List<Integer> series = new ArrayList<>();
+        for(int n : input) series.add(n);
 
-        sequence = sequence.stream().sorted().toList();
+        series = series.stream().sorted().toList();
 
-        for(int i = 1; i <= sequence.size(); i++){
-            if(i != sequence.get(i - 1)){
+        for(int i = 1; i <= series.size(); i++){
+            if(i != series.get(i - 1)){
                 return i;
             }
         }
 
-        return sequence.size() + 1; // default
+        return series.size() + 1; // default
     }
 
     public static void main(String[] args) {
 
         System.out.println(new PermMissingElem().solution(new int[]{1, 2, 3}));
+
+        /**
+         * Developer Hindsights:
+         *
+         * Use the mathematical formula for series of integers to solve this.
+         */
 
     }
 }

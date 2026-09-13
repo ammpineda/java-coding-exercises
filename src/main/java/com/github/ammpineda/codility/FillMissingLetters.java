@@ -13,30 +13,29 @@ public class FillMissingLetters {
     final String charSequence = "abc";
 
     public String solution(String input) {
-        char[] word = input.toLowerCase().toCharArray();
-        char[] letters = charSequence.toCharArray();
+        char[] result = input.toLowerCase().toCharArray();
 
-        for(int i = 0; i < word.length; i++){
-            if('?' == word[i]){
-                for(char letter : letters){
+        for(int i = 0; i < result.length; i++){
+            if('?' == result[i]){
+                for(char letter : charSequence.toCharArray()){
                     boolean isSameAsRight =
-                            i < word.length - 1 && // ensures that it is not the last index
-                                    word[i] == word[i+1]; // same as the right adjacent -->
+                            i < result.length - 1 && // ensures that it is not the last index
+                                    result[i] == result[i+1]; // same as the right adjacent -->
 
 
                     boolean isSameAsLeft =
                             i > 0 && // ensures that its not the first index
-                                    word[i] == word[i-1]; // same as the left adjacent <--
+                                    result[i] == result[i-1]; // same as the left adjacent <--
 
                     // Checks if both flags are unfulfilled
                     if(!isSameAsRight && !isSameAsLeft){
-                        word[i] = letter;
+                        result[i] = letter;
                         break;
                     }
                 }
             }
         }
-        return String.valueOf(word);
+        return String.valueOf(result);
 
     }
 
