@@ -32,6 +32,7 @@ public class MinArrowRotations {
 
     public static void main(String[] args) {
         System.out.println(new MinArrowRotations().solution("^^^>><<v")); // Result should be 5.
+        System.out.println(new MinArrowRotations().solution(">><<^^vvv")); // Result should be 6
 
     }
 
